@@ -40,6 +40,10 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
         "net.swipe.list": { return SwipeTableViewController(nibName:"SwipeTableViewController", bundle:nil) },
         //"net.swipe.swipe": { return SwipeViewController() },
     ]
+    static private var extMapping = [
+      "html":"text/html",
+      "htm":"text/html"
+    ]
     static var stack = [SwipeBrowser]()
     static func register(type:String, factory:@escaping (Void) -> UIViewController) {
         typeMapping[type] = factory
@@ -114,13 +118,14 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
             self.openJsonDocument(document, localResource: true)
         } else if let url = self.url {
             if url.scheme == "file" {
+                let type = SwipeBrowser.extMapping[url.pathExtension.lowercased()]
                 if let data = try? Data(contentsOf: url) {
-                  self.openData(data, type:url.pathExtension, localResource: true)
+                  self.openData(data, type:type, localResource: true)
                 } else {
                     // On-demand resource support
                     if let urlLocal = Bundle.main.url(forResource: url.lastPathComponent, withExtension: nil),
                         let data = try? Data(contentsOf: urlLocal) {
-                      self.openData(data, type:url.pathExtension, localResource: true)
+                      self.openData(data, type:type, localResource: true)
                     } else {
                         self.processError("Missing resource:".localized + "\(url)")
                     }
@@ -131,7 +136,8 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
                     MyLog("SWBrows loaded \(url), \(type ?? "?")")
                     if let urlL = urlLocal, error == nil,
                        let data = try? Data(contentsOf: urlL) {
-                        self.openData(data, type:type, localResource: false)
+                        let t = type?.components(separatedBy: ";")[0]
+                        self.openData(data, type:t, localResource: false)
                     } else {
                         self.processError(error?.localizedDescription ?? "")
                     }
