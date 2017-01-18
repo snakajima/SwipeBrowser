@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		743BCD131E30085A008EF1C5 /* Icon-180.png in Resources */ = {isa = PBXBuildFile; fileRef = 743BCD121E30085A008EF1C5 /* Icon-180.png */; };
+		743BCD151E30087F008EF1C5 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = 743BCD141E30087F008EF1C5 /* more.png */; };
 		744BB7971E2FDA750058384C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7961E2FDA750058384C /* AppDelegate.swift */; };
 		744BB79E1E2FDA750058384C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744BB79D1E2FDA750058384C /* Assets.xcassets */; };
 		744BB7A11E2FDA750058384C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744BB79F1E2FDA750058384C /* LaunchScreen.storyboard */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		743BCD121E30085A008EF1C5 /* Icon-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-180.png"; sourceTree = "<group>"; };
+		743BCD141E30087F008EF1C5 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		744BB7931E2FDA750058384C /* SwipeBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwipeBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		744BB7961E2FDA750058384C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		744BB79D1E2FDA750058384C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				744BB7DF1E2FE9740058384C /* index.swipe */,
+				743BCD121E30085A008EF1C5 /* Icon-180.png */,
+				743BCD141E30087F008EF1C5 /* more.png */,
 			);
 			path = script;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 				744BB79E1E2FDA750058384C /* Assets.xcassets in Resources */,
 				744BB7E01E2FE9740058384C /* index.swipe in Resources */,
 				744BB7C51E2FDFAF0058384C /* SwipeTableViewController.xib in Resources */,
+				743BCD151E30087F008EF1C5 /* more.png in Resources */,
+				743BCD131E30085A008EF1C5 /* Icon-180.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
