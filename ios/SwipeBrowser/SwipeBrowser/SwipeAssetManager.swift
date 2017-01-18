@@ -15,9 +15,9 @@ import UIKit
 import CoreData
 
 private func MyLog(_ text:String, level:Int = 0) {
-    let s_verbosLevel = 0
+    let s_verbosLevel = 1
     if level <= s_verbosLevel {
-        NSLog(text)
+        print(text)
     }
 }
 
@@ -64,7 +64,7 @@ class SwipeAssetManager {
 
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let filename = "asset004.sqlite"
+        let filename = "asset006.sqlite"
 #if os(tvOS)
         let url = self.applicationCachesDirectory.appendingPathComponent(filename)
 #else
@@ -159,7 +159,11 @@ class SwipeAssetManager {
                 let connection = SwipeConnection.connection(url, urlLocal:urlLocal, entity:entity)
                 connection.load { (error: NSError!) -> Void in
                     if error == nil {
+                        MyLog("SWAsset loaded \(url.lastPathComponent) \(connection.contentType ?? "(unknown type)")", level:1)
                         entity.setValue(true, forKey: "loaded")
+                        if let type = connection.contentType {
+                          entity.setValue(type, forKey: "type")
+                        }
                         var resourceValues = URLResourceValues()
                         resourceValues.isExcludedFromBackup = true
                         try! urlLocal.setResourceValues(resourceValues)

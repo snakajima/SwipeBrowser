@@ -17,7 +17,7 @@ import CoreData
 private func MyLog(_ text:String, level:Int = 0) {
     let s_verbosLevel = 0
     if level <= s_verbosLevel {
-        NSLog(text)
+        print(text)
     }
 }
 
@@ -52,6 +52,7 @@ class SwipeConnection: NSObject {
                         } catch {
                             MyLog("SWConn  failed to get attributes (but ignored)")
                         }
+                        connection.contentType = httpRes.allHeaderFields["Content-Type"] as? String
                         MyLog("SWConn  loaded \(url.lastPathComponent) in \(duration)s (\(connection.fileSize))", level:1)
                         do {
                             if fm.fileExists(atPath: urlLocal.path) {
@@ -82,6 +83,7 @@ class SwipeConnection: NSObject {
     let entity:NSManagedObject
     var callbacks = Array<(NSError!) -> Void>()
     var fileSize = 0
+    var contentType:String?
 
     private init(url:URL, urlLocal:URL, entity:NSManagedObject) {
         self.url = url
