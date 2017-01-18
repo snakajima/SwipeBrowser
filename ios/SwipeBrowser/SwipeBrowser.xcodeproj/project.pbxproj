@@ -21,6 +21,8 @@
 		744BB7B51E2FDCD10058384C /* SwipeConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7B41E2FDCD10058384C /* SwipeConnection.swift */; };
 		744BB7B71E2FDD510058384C /* SwipeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7B61E2FDD510058384C /* SwipeExtensions.swift */; };
 		744BB7B91E2FDDDD0058384C /* SwipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7B81E2FDDDD0058384C /* SwipeParser.swift */; };
+		744BB7C51E2FDFAF0058384C /* SwipeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 744BB7C41E2FDFAF0058384C /* SwipeTableViewController.xib */; };
+		744BB7C71E2FE2C80058384C /* SwipeBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 744BB7C61E2FE2C80058384C /* SwipeBrowser.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		744BB7B41E2FDCD10058384C /* SwipeConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeConnection.swift; sourceTree = "<group>"; };
 		744BB7B61E2FDD510058384C /* SwipeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeExtensions.swift; sourceTree = "<group>"; };
 		744BB7B81E2FDDDD0058384C /* SwipeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeParser.swift; sourceTree = "<group>"; };
+		744BB7C41E2FDFAF0058384C /* SwipeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeTableViewController.xib; sourceTree = "<group>"; };
+		744BB7C61E2FE2C80058384C /* SwipeBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwipeBrowser.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,15 +76,10 @@
 		744BB7951E2FDA750058384C /* SwipeBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				744BB7B81E2FDDDD0058384C /* SwipeParser.swift */,
-				744BB7B61E2FDD510058384C /* SwipeExtensions.swift */,
-				744BB7B41E2FDCD10058384C /* SwipeConnection.swift */,
-				744BB7B21E2FDCBE0058384C /* SwipeAssetManager.swift */,
-				744BB7B01E2FDCA50058384C /* SwipePrefetcher.swift */,
-				744BB7AE1E2FDC830058384C /* SwipeTableViewController.swift */,
-				744BB7AC1E2FDC7B0058384C /* SNNotificationManager.swift */,
-				744BB7A81E2FDC290058384C /* SwipeBrowser.swift */,
-				744BB7AA1E2FDC600058384C /* SwipeDocumentViewer.swift */,
+				744BB7BC1E2FDEEE0058384C /* util */,
+				744BB7BB1E2FDEC70058384C /* network */,
+				744BB7BA1E2FDEA40058384C /* core */,
+				744BB7BD1E2FDF0B0058384C /* viewers */,
 				744BB7961E2FDA750058384C /* AppDelegate.swift */,
 				744BB7981E2FDA750058384C /* ViewController.swift */,
 				744BB79A1E2FDA750058384C /* Main.storyboard */,
@@ -89,6 +88,61 @@
 				744BB7A21E2FDA750058384C /* Info.plist */,
 			);
 			path = SwipeBrowser;
+			sourceTree = "<group>";
+		};
+		744BB7BA1E2FDEA40058384C /* core */ = {
+			isa = PBXGroup;
+			children = (
+				744BB7BE1E2FDF630058384C /* ios */,
+				744BB7A81E2FDC290058384C /* SwipeBrowser.swift */,
+				744BB7AA1E2FDC600058384C /* SwipeDocumentViewer.swift */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		744BB7BB1E2FDEC70058384C /* network */ = {
+			isa = PBXGroup;
+			children = (
+				744BB7B01E2FDCA50058384C /* SwipePrefetcher.swift */,
+				744BB7B21E2FDCBE0058384C /* SwipeAssetManager.swift */,
+				744BB7B41E2FDCD10058384C /* SwipeConnection.swift */,
+			);
+			name = network;
+			sourceTree = "<group>";
+		};
+		744BB7BC1E2FDEEE0058384C /* util */ = {
+			isa = PBXGroup;
+			children = (
+				744BB7AC1E2FDC7B0058384C /* SNNotificationManager.swift */,
+				744BB7B61E2FDD510058384C /* SwipeExtensions.swift */,
+				744BB7B81E2FDDDD0058384C /* SwipeParser.swift */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		744BB7BD1E2FDF0B0058384C /* viewers */ = {
+			isa = PBXGroup;
+			children = (
+				744BB7C01E2FDF750058384C /* ios */,
+				744BB7AE1E2FDC830058384C /* SwipeTableViewController.swift */,
+			);
+			name = viewers;
+			sourceTree = "<group>";
+		};
+		744BB7BE1E2FDF630058384C /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				744BB7C61E2FE2C80058384C /* SwipeBrowser.xib */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		744BB7C01E2FDF750058384C /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				744BB7C41E2FDFAF0058384C /* SwipeTableViewController.xib */,
+			);
+			name = ios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +205,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744BB7C71E2FE2C80058384C /* SwipeBrowser.xib in Resources */,
 				744BB7A11E2FDA750058384C /* LaunchScreen.storyboard in Resources */,
 				744BB79E1E2FDA750058384C /* Assets.xcassets in Resources */,
 				744BB79C1E2FDA750058384C /* Main.storyboard in Resources */,
+				744BB7C51E2FDFAF0058384C /* SwipeTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
