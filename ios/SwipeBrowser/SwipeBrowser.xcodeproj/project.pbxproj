@@ -12,6 +12,15 @@
 		744BB79C1E2FDA750058384C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744BB79A1E2FDA750058384C /* Main.storyboard */; };
 		744BB79E1E2FDA750058384C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744BB79D1E2FDA750058384C /* Assets.xcassets */; };
 		744BB7A11E2FDA750058384C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744BB79F1E2FDA750058384C /* LaunchScreen.storyboard */; };
+		744BB7A91E2FDC290058384C /* SwipeBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7A81E2FDC290058384C /* SwipeBrowser.swift */; };
+		744BB7AB1E2FDC600058384C /* SwipeDocumentViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7AA1E2FDC600058384C /* SwipeDocumentViewer.swift */; };
+		744BB7AD1E2FDC7B0058384C /* SNNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7AC1E2FDC7B0058384C /* SNNotificationManager.swift */; };
+		744BB7AF1E2FDC830058384C /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7AE1E2FDC830058384C /* SwipeTableViewController.swift */; };
+		744BB7B11E2FDCA50058384C /* SwipePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7B01E2FDCA50058384C /* SwipePrefetcher.swift */; };
+		744BB7B31E2FDCBE0058384C /* SwipeAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7B21E2FDCBE0058384C /* SwipeAssetManager.swift */; };
+		744BB7B51E2FDCD10058384C /* SwipeConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7B41E2FDCD10058384C /* SwipeConnection.swift */; };
+		744BB7B71E2FDD510058384C /* SwipeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7B61E2FDD510058384C /* SwipeExtensions.swift */; };
+		744BB7B91E2FDDDD0058384C /* SwipeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744BB7B81E2FDDDD0058384C /* SwipeParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		744BB79D1E2FDA750058384C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		744BB7A01E2FDA750058384C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		744BB7A21E2FDA750058384C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		744BB7A81E2FDC290058384C /* SwipeBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeBrowser.swift; sourceTree = "<group>"; };
+		744BB7AA1E2FDC600058384C /* SwipeDocumentViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDocumentViewer.swift; sourceTree = "<group>"; };
+		744BB7AC1E2FDC7B0058384C /* SNNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNNotificationManager.swift; sourceTree = "<group>"; };
+		744BB7AE1E2FDC830058384C /* SwipeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
+		744BB7B01E2FDCA50058384C /* SwipePrefetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipePrefetcher.swift; sourceTree = "<group>"; };
+		744BB7B21E2FDCBE0058384C /* SwipeAssetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeAssetManager.swift; sourceTree = "<group>"; };
+		744BB7B41E2FDCD10058384C /* SwipeConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeConnection.swift; sourceTree = "<group>"; };
+		744BB7B61E2FDD510058384C /* SwipeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeExtensions.swift; sourceTree = "<group>"; };
+		744BB7B81E2FDDDD0058384C /* SwipeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,15 @@
 		744BB7951E2FDA750058384C /* SwipeBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				744BB7B81E2FDDDD0058384C /* SwipeParser.swift */,
+				744BB7B61E2FDD510058384C /* SwipeExtensions.swift */,
+				744BB7B41E2FDCD10058384C /* SwipeConnection.swift */,
+				744BB7B21E2FDCBE0058384C /* SwipeAssetManager.swift */,
+				744BB7B01E2FDCA50058384C /* SwipePrefetcher.swift */,
+				744BB7AE1E2FDC830058384C /* SwipeTableViewController.swift */,
+				744BB7AC1E2FDC7B0058384C /* SNNotificationManager.swift */,
+				744BB7A81E2FDC290058384C /* SwipeBrowser.swift */,
+				744BB7AA1E2FDC600058384C /* SwipeDocumentViewer.swift */,
 				744BB7961E2FDA750058384C /* AppDelegate.swift */,
 				744BB7981E2FDA750058384C /* ViewController.swift */,
 				744BB79A1E2FDA750058384C /* Main.storyboard */,
@@ -138,7 +165,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				744BB7991E2FDA750058384C /* ViewController.swift in Sources */,
+				744BB7AB1E2FDC600058384C /* SwipeDocumentViewer.swift in Sources */,
+				744BB7B51E2FDCD10058384C /* SwipeConnection.swift in Sources */,
+				744BB7A91E2FDC290058384C /* SwipeBrowser.swift in Sources */,
+				744BB7AD1E2FDC7B0058384C /* SNNotificationManager.swift in Sources */,
+				744BB7AF1E2FDC830058384C /* SwipeTableViewController.swift in Sources */,
+				744BB7B31E2FDCBE0058384C /* SwipeAssetManager.swift in Sources */,
 				744BB7971E2FDA750058384C /* AppDelegate.swift in Sources */,
+				744BB7B71E2FDD510058384C /* SwipeExtensions.swift in Sources */,
+				744BB7B11E2FDCA50058384C /* SwipePrefetcher.swift in Sources */,
+				744BB7B91E2FDDDD0058384C /* SwipeParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
