@@ -127,7 +127,8 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
                 }
             } else {
                 let manager = SwipeAssetManager.sharedInstance()
-                manager.loadAsset(url, prefix: "", bypassCache:true) { (urlLocal:URL?,  error:NSError?) -> Void in
+              manager.loadAsset(url, prefix: "", bypassCache:true) { (urlLocal:URL?, type:String?, error:NSError?) -> Void in
+                    MyLog("SWBrows loaded \(url), \(type ?? "?")")
                     if let urlL = urlLocal, error == nil,
                        let data = try? Data(contentsOf: urlL) {
                         self.openData(data, localResource: false)

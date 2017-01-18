@@ -15,7 +15,7 @@ import UIKit
 import CoreData
 
 private func MyLog(_ text:String, level:Int = 0) {
-    let s_verbosLevel = 1
+    let s_verbosLevel = 0
     if level <= s_verbosLevel {
         print(text)
     }
@@ -111,13 +111,14 @@ class SwipeAssetManager {
         }
     }
 
-    func loadAsset(_ url:URL, prefix:String, bypassCache:Bool, callback:((URL?, NSError?) -> Void)?) {
+    func loadAsset(_ url:URL, prefix:String, bypassCache:Bool, callback:((URL?, String?, NSError?) -> Void)?) {
         assert(Thread.current == Thread.main, "thread error")
         
         if url.scheme == "file" {
             MyLog("SWAsset loadAsset with file: \(url.lastPathComponent)", level:1)
             DispatchQueue.main.async(execute: { () -> Void in
-                callback?(url, nil)
+                // LATER: We should perform type mapping from the extension
+                callback?(url, nil, nil)
             })
             return
         }
@@ -152,7 +153,7 @@ class SwipeAssetManager {
                 MyLog("SWAsset reuse \(url.lastPathComponent), \(fileSize)", level:1)
                 // We should call it asynchronously, which the caller expects.
                 DispatchQueue.main.async(execute: { () -> Void in
-                    callback?(urlLocal, nil)
+                    callback?(urlLocal, entity.value(forKey: "type") as? String, nil)
                 })
             } else {
                 MyLog("SWAsset loading \(url.lastPathComponent)", level:1)
@@ -169,12 +170,12 @@ class SwipeAssetManager {
                         try! urlLocal.setResourceValues(resourceValues)
                         self.saveContext()
                     }
-                    callback?(urlLocal, error)
+                    callback?(urlLocal, connection.contentType, error)
                 }
             }
         } catch {
             MyLog("SNAsset loadAsset \(error)")
-            callback?(nil, error as NSError)
+            callback?(nil, nil, error as NSError)
         }
     }
     
