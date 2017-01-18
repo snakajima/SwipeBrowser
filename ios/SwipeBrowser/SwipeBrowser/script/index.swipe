@@ -3,7 +3,7 @@
     "rowHeight":"10%",
     "items":[
         { "url":"https://www.google.com", "title":"Google", "icon":"Icon-180.png" },
-        { "url":"swipe.swipe", "title":"Swipe Overview", "icon":"Icon-180.png" },
+        { "url":"hello.html", "title":"Hello World", "icon":"Icon-180.png" },
         { "url":"tutorial.swipe", "title":"Swipe Tutorial", "icon":"Icon-180.png" },
         { "url":"empty.swipe", "title":"Empty", "icon":"Icon-180.png" },
         { "url":"dice.swipe", "title":"Dice (scale, rotate, translate)", "icon":"http://satoshi.blogs.com/swipe/Dice1.png" },

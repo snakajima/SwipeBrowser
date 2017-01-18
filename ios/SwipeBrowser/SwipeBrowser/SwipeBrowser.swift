@@ -115,12 +115,12 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
         } else if let url = self.url {
             if url.scheme == "file" {
                 if let data = try? Data(contentsOf: url) {
-                    self.openData(data, localResource: true)
+                  self.openData(data, type:url.pathExtension, localResource: true)
                 } else {
                     // On-demand resource support
                     if let urlLocal = Bundle.main.url(forResource: url.lastPathComponent, withExtension: nil),
                         let data = try? Data(contentsOf: urlLocal) {
-                        self.openData(data, localResource: true)
+                      self.openData(data, type:url.pathExtension, localResource: true)
                     } else {
                         self.processError("Missing resource:".localized + "\(url)")
                     }
@@ -131,7 +131,7 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
                     MyLog("SWBrows loaded \(url), \(type ?? "?")")
                     if let urlL = urlLocal, error == nil,
                        let data = try? Data(contentsOf: urlL) {
-                        self.openData(data, localResource: false)
+                        self.openData(data, type:type, localResource: false)
                     } else {
                         self.processError(error?.localizedDescription ?? "")
                     }
@@ -277,11 +277,12 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
         }
     }
     
-    private func openData(_ dataRetrieved:Data?, localResource:Bool) {
+    private func openData(_ dataRetrieved:Data?, type:String?, localResource:Bool) {
         guard let data = dataRetrieved else {
             return processError("Failed to open: No data".localized)
         }
         do {
+            MyLog("SWBrows openData type=\(type ?? "?")", level: 0)
             guard let document = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions()) as? [String:Any] else {
                 return processError("Not a dictionary.".localized)
             }
