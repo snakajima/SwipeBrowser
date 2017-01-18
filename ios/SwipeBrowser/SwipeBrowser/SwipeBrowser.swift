@@ -111,7 +111,7 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
 #endif
 
         if let document = self.jsonDocument {
-            self.openDocument(document, localResource: true)
+            self.openJsonDocument(document, localResource: true)
         } else if let url = self.url {
             if url.scheme == "file" {
                 if let data = try? Data(contentsOf: url) {
@@ -219,7 +219,7 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
         }
     }
     
-    private func openDocumentWithODR(_ document:[String:Any], localResource:Bool) {
+    private func openJsonDocumentWithODR(_ document:[String:Any], localResource:Bool) {
             if let tags = document["resources"] as? [String], localResource {
                 //NSLog("tags = \(tags)")
                 let request = NSBundleResourceRequest(tags: Set<String>(tags))
@@ -252,7 +252,7 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
             }
     }
     
-    private func openDocument(_ document:[String:Any], localResource:Bool) {
+    private func openJsonDocument(_ document:[String:Any], localResource:Bool) {
         var deferred = false
 #if os(iOS)
         if let orientation = document["orientation"] as? String, orientation == "landscape" {
@@ -267,13 +267,13 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
                 let vcDummy = UIViewController()
                 self.present(vcDummy, animated: false, completion: { () -> Void in
                     self.dismiss(animated: false, completion: nil)
-                    self.openDocumentWithODR(document, localResource: localResource)
+                    self.openJsonDocumentWithODR(document, localResource: localResource)
                 })
             }
         }
 #endif
         if !deferred {
-            self.openDocumentWithODR(document, localResource: localResource)
+            self.openJsonDocumentWithODR(document, localResource: localResource)
         }
     }
     
@@ -285,7 +285,7 @@ class SwipeBrowser: UIViewController, SwipeDocumentViewerDelegate {
             guard let document = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions()) as? [String:Any] else {
                 return processError("Not a dictionary.".localized)
             }
-            openDocument(document, localResource: localResource)
+            openJsonDocument(document, localResource: localResource)
         } catch let error as NSError {
             let value = error.userInfo["NSDebugDescription"]!
             processError("Invalid JSON file".localized + "\(error.localizedDescription). \(value)")
